@@ -1,7 +1,9 @@
-name: TEST 2 - Hello World
+name: TEST 3 Hello World
 
 on:
   workflow_dispatch:
+  push:
+    branches: ["main"]
 
 jobs:
   print-hello-world:
