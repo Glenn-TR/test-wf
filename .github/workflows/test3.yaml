@@ -11,4 +11,9 @@ jobs:
 
     steps:
       - name: Say hello
-        run: echo "Hello World"
+        run: echo "Hello World" > output.txt
+      - name: Archive results
+        uses: actions/upload-artifact@v4
+        with:
+          name: output.txt
+          path: output.txt
