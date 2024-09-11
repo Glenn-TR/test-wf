@@ -10,10 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: SCRIPT TEST
+        shell: bash
+        run: ./test.sh
+      - name: Save file access times BEFORE run
+        run: bash ./get-access-times-before.sh
       - name: Say hello
-        run: echo "Hello World" > output.txt
+        run: echo "Hello World" > OUTPUT/output.txt
+      - name: Save file access times AFTER run
+        run: bash ./get-access-times-after.sh
       - name: Archive results
         uses: actions/upload-artifact@v4
         with:
-          name: output.txt
-          path: output.txt
+          name: OUTPUT FOLDER
+          path: OUTPUTS/
+ 
