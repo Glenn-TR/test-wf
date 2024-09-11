@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: SCRIPT TEST
         shell: bash
-        run: ./test.sh
+        run: ./.github/scripts/test.sh
       - name: Save file access times BEFORE run
         run: bash ./get-access-times-before.sh
       - name: Say hello
